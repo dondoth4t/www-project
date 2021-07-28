@@ -25,6 +25,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/comp3340/project/browse.php">Browse</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/comp3340/project/contact.php">Contact</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
