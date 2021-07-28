@@ -10,8 +10,8 @@
 <body>
     <?php
     session_start();
-}
-
+    ?>
+<style>
 html {
   box-sizing: border-box;
 }
