@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <title>COMP 3340 Project</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+    .center {
+  text-align: center;
+  border: 1px solid black;
+}
+  </style>
 </head>
 
 <body>
@@ -60,7 +66,7 @@
         </div>
     </nav>
     <!--Main heading for contact page-->
-    <div class="row justify-content-md-center">=
+    <div class="center">
         <h1 class="se-heading text--"> Shoe Factory</h1>
         <p>
             <strong> Shoe Factory Locations</strong>
@@ -69,7 +75,8 @@
             <br>Hours: 9a.m.-5.pm. Everyday
         </p>
     </div>
-    401 Sunset Ave, Windsor, ON N9B 3P4
+    <br>
+    <div class="center">
     <h2>Contact Form</h2>
     <form id="ContactForm" action="mailto:tyler.hong@hotmail.com" method="post">
         <div>
