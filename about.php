@@ -94,7 +94,7 @@ html {
         <p class="title">CEO & Founder</p>
         <p>about urself.</p>
         <p>zito@example.com</p>
-        <p><button class="button">Contact</button></p>
+        
       </div>
     </div>
   </div>
@@ -107,7 +107,7 @@ html {
         <p class="title">CEO & Founder </p>
         <p>about urself.</p>
         <p>tyler@example.com</p>
-        <p><button class="button">Contact</button></p>
+     
       </div>
     </div>
   </div>
@@ -120,7 +120,7 @@ html {
         <p class="title">CEO & Founder </p>
         <p>about urself.</p>
         <p>karimchahine2@hotmail.com</p>
-        <p><button class="button">Contact</button></p>
+   
       </div>
     </div>
   </div>
@@ -134,7 +134,7 @@ html {
         <p class="title">CEO & Founder </p>
         <p>about urself.</p>
         <p>don@hotmail.com</p>
-        <p><button class="button">Contact</button></p>
+      
       </div>
     </div>
   </div>
