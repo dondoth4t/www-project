@@ -55,6 +55,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/comp3340/project/contact.php">Contact</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/comp3340/project/about.php">About Us</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
