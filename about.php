@@ -11,74 +11,57 @@
     <?php
     session_start();
     ?>
-<style>
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-.column {
-  float: left;
-  width: 33.3%;
-  margin-bottom: 16px;
-  padding: 0 8px;
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
-}
-
-.about-section {
-  padding: 50px;
-  text-align: center;
-  background-color: #474e5d;
-  color: white;
-}
-
-.container {
-  padding: 0 16px;
-}
-
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.title {
-  color: grey;
-}
-
-.button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-}
-
-.button:hover {
-  background-color: #555;
-}
-
-@media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
-  }
-}
-</style>
-</head>
-<body>
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Project</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/comp3340/project">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/comp3340/project/browse.php">Browse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/comp3340/project/contact.php">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/comp3340/project/about.php">About Us</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                            <?php
+                            if (isset($_SESSION['email'])) {
+                                echo $_SESSION['email'];
+                            } else {
+                                echo "Account";
+                            }
+                            ?>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <?php
+                            if (isset($_SESSION['email'])) {
+                                echo '<li><a class="dropdown-item" href="/comp3340/project/account.php">Account</a></li>';
+                                echo '<li><a class="dropdown-item" href="/comp3340/project/logout.php">Log Out</a></li>';
+                            } else {
+                                echo '<li><a class="dropdown-item" href="/comp3340/project/login.php">Log In</a></li>';
+                                echo '<li><a class="dropdown-item" href="/comp3340/project/signup.php">Sign Up</a></li>';
+                            }
+                            ?>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/comp3340/project/cart.php">Cart</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 <div class="about-section">
   <h1>About Us Page</h1>
   <p>Some text about who we are and what we do.</p>
