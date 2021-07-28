@@ -11,6 +11,32 @@
     <?php
     session_start();
     ?>
+    <?php
+    // Arrays to store loaded data
+    $servername = "localhost";
+    $username = "namuro_comp3340";
+    $password = "comp3340";
+    $dbname = "namuro_comp3340";
+    // Create connection
+    $conn = new mysqli(
+        $servername,
+        $username,
+        $password,
+        $dbname
+    );
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    if (isset($_POST['product-delete']) and isset($_SESSION['email'])) {
+        $sql = "DELETE FROM `project_cart` WHERE id=" . $_POST['product-id'] . " AND email='" . $_SESSION['email'] . "'";
+        $conn->query($sql);
+    } else if (isset($_POST['product-update']) and isset($_SESSION['email'])) {
+        $sql = "UPDATE `project_cart` SET `quantity`=" . $_POST['product-quantity'] . " WHERE id=" . $_POST['product-id'] . " AND email='" . $_SESSION['email'] . "'";
+        $conn->query($sql);
+    }
+    ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Project</a>
@@ -90,9 +116,30 @@
                 <div class="col-md-2">
                 <img src="' . $item['img'] . '" class="img-fluid rounded-start" alt="' . $item['name'] . '">
                 </div>
-                <div class="col-md-10"><div class="card-body">
+                <div class="col-md-10">
+                <div class="card-body">
                 <h6 class="card-title">' . $item['name'] . ' x ' . $row['quantity'] . '</h6>
                 <p class="card-text"><small class="text-muted">$' . $row['quantity'] * $item['price'] . '</small></p>
+                <form action="" method="post">
+                <div class="row mt-3">
+                <div class="col-2 pe-2">
+                <select class="form-select" name="product-quantity">';
+                for ($x = 1; $x <= 10; $x++) {
+                    if ($x === $row['quantity']) {
+                        echo '<option value="' . $x . '" selected">' . $x . '</option>';
+                    } else {
+                        echo '<option value="' . $x . '">' . $x . '</option>';
+                    }
+                }
+                echo '</select>
+                </div>
+                <div class="col-5 p-0">
+                <button type="submit" name="product-update" class="btn btn-primary">Update Quantity</button>
+                <button type="submit" name="product-delete" class="btn btn-danger">Delete Item</button>
+                <input type="hidden" name="product-id" value="' . $row['id'] . '">
+                </div>
+                </div>
+                </form>
                 </div>
                 </div>
                 </div>
